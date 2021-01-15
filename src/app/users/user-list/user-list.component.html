@@ -1,0 +1,29 @@
+<table class="table" mdbtable>
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">email</th>
+            <th scope="col">first name</th>
+            <th scope="col">last name </th>
+            <th scope="col">image</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of collection">
+        <tr>
+            <th scope="row" [routerLink]="['/user', item.id]">{{item.id}}</th>
+            <td>{{item.email}}</td>
+            <td>{{item.first_name}}</td>
+            <td>{{item.last_name}}</td>
+            <td><img src='{{item.avatar}}'></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<nav aria-label="...">
+    <ul class="pagination pagination-md justify-content-center">
+        <li class="page-item"> <a class="page-link" (click)="getData(1)">1</a> </li>
+
+        <li class="page-item"><a class="page-link" (click)="getData(2)">2</a></li>
+    </ul>
+</nav>
